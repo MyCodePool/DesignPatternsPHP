@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace DesignPatternsPHP\Creational\Builder\ExampleA;
 
 
-$creator = new SmartPhoneCreator();
+$director = new Director();
 
-$samsungBuilder = new SamsungPhoneBuilder([
+$builderSamsung = new BuilderSamsung([
     'cpu' => 'Snapdragon 820',
     'gpu' => 'Adreno 530',
     'ram' => 4,
@@ -15,7 +15,7 @@ $samsungBuilder = new SamsungPhoneBuilder([
     'camera' => 12,
     'case' => 'Silver Metalic Case'
 ]);
-$appleBuilder = new ApplePhoneBuilder([
+$builderApple = new BuilderApple([
     'cpu' => 'A10',
     'gpu' => 'Apple',
     'ram' => 3,
@@ -23,7 +23,7 @@ $appleBuilder = new ApplePhoneBuilder([
     'camera' => 12,
     'case' => 'Black Matt Case'
 ]);
-$htcBuilder = new HTCPhoneBuilder([
+$builderHtc = new BuilderHTC([
     'cpu' => 'Snapdragon 810',
     'gpu' => 'Adreno 520',
     'ram' => 4,
@@ -32,9 +32,9 @@ $htcBuilder = new HTCPhoneBuilder([
     'case' => 'Blue Matt Case'
 ]);
 
-$note7 = $creator->buildPhone($samsungBuilder);
-$iphone7Plus = $creator->buildPhone($appleBuilder);
-$htc = $creator->buildPhone($htcBuilder);
+$note7 = $director->buildPhone($builderSamsung);
+$iphone7Plus = $director->buildPhone($builderApple);
+$htc = $director->buildPhone($builderHtc);
 
 echo $note7."</br>";
 echo $iphone7Plus."</br>";
