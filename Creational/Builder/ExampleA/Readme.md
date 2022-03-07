@@ -1,6 +1,4 @@
-
-
-<?php
+```php
 
 // Builder Design Pattern
 
@@ -249,3 +247,4 @@ $htc = $creator->buildPhone($htcBuilder);
 echo $note7;
 echo $iphone7Plus;
 echo $htc;
+```
