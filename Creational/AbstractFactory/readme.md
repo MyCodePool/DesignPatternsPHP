@@ -1,7 +1,5 @@
 # Abstract Factory
 
-The 
-
 ```php
 /**
  * BookFactory classes
